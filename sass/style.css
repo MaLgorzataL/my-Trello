@@ -1,0 +1,82 @@
+.board {
+    font-family: "Dokdo";
+}
+
+.column-container {
+    max-width: 1200px;
+    min-width: 350px;
+}
+
+.column {
+    font-size: 25px;
+    text-shadow: 1px 1px gray;
+    border: 5px solid tan;
+    width: 25%;
+    margin: 3px;
+    display: inline-block;
+}
+
+.card {
+    width: 100px;
+    height: auto;
+    background-color: yellow;
+    overflow: hidden;
+    margin: 3px;
+    padding: 3px;
+}
+
+.card-description {
+    font-family: "Bitter";
+    font-size: 12px;
+}
+
+.card-priority {
+    background-color: red;
+}
+
+.card-urgent {
+    background-color: orange;
+}
+
+.card-can-wait {
+    background-color: green;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    text-shadow: 1px 1px gray;
+    background-color: rgb(202, 58, 58);
+    width: 80%;
+    margin: 0 auto;
+}
+ 
+h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+li {
+    display: inline-block;
+}
+
+.column1 {
+    position: absolute;
+    left: 0;
+    top: 80px;
+}
+.column2 {
+    position: absolute;
+    left: 0;
+    top: 80px;
+}
+.column3 {
+    position: absolute;
+    left: 0;
+    top: 80px;
+}
+.column4 {
+    position: absolute;
+    left: 0;
+    top: 80px;
+}
