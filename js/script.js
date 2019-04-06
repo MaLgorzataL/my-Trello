@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
       function Column(name) {
         var self = this;
-        var option = 0;
       
         this.id = randomString();
         this.name = name;
@@ -54,18 +53,56 @@ document.addEventListener('DOMContentLoaded', function() {
         this.id = randomString();
         this.description = description;
         this.element = generateTemplate('card-template', { description: this.description }, 'li');
+        this.element.classList.add('card-default');
         this.element.querySelector('.card').addEventListener('click', function (event) {
           event.stopPropagation();
           
           if (event.target.classList.contains('btn-delete')) {
               self.removeCard();
+          };
+          if (event.target.classList.contains('status')) {
+              self.setStatus();
           }
         });
     };
     Card.prototype = {
         removeCard: function() {
-            this.element.parentNode.removeChild(this.element);
-        }
+          this.element.parentNode.removeChild(this.element);
+        },
+        setStatus: function () {
+          var option = prompt('How important is this task ? 1 - priority, 2 - urgent, 3 - can wait');
+          if (option === '1') {
+            this.element.classList.add('card-priority');
+            if (this.element.classList.contains('card-default')){
+            this.element.classlist.remove('card-default')};
+            if (this.element.classList.contains('card-important')){
+              this.element.classlist.remove('card-important')};
+            if (this.element.classList.contains('card-can-wait')){
+              this.element.classlist.remove('card-can-wait')};
+          } else {
+              if (option === '2') {
+                this.element.classList.add('card-important');
+                if (this.element.classList.contains('card-default')){
+                  this.element.classlist.remove('card-default')};
+                  if (this.element.classList.contains('card-priority')){
+                    this.element.classlist.remove('card-priority')};
+                  if (this.element.classList.contains('card-can-wait')){
+                    this.element.classlist.remove('card-can-wait')};
+                } else {
+                if (option === '3') {
+                  this.element.classList.add('card-can-wait');
+                  if (this.element.classList.contains('card-default')){
+                    this.element.classlist.remove('card-default')};
+                    if (this.element.classList.contains('card-important')){
+                      this.element.classlist.remove('card-important')};
+                    if (this.element.classList.contains('card-priority')){
+                      this.element.classlist.remove('card-priority')};
+                  } else {
+                    alert('Nie wybrano opcji');
+                }     
+              }  
+            }
+          }
     };
 
     function initSortable(id) {

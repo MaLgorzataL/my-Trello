@@ -5,24 +5,32 @@
 .column-container {
     max-width: 1200px;
     min-width: 350px;
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */  
+
 }
 
 .column {
     font-size: 25px;
     text-shadow: 1px 1px gray;
     border: 5px solid tan;
-    width: 25%;
+    width: 100%;
+    max-width: 400px;
     margin: 3px;
-    display: inline-block;
 }
 
 .card {
     width: 100px;
     height: auto;
-    background-color: yellow;
     overflow: hidden;
-    margin: 3px;
-    padding: 3px;
+    border: 5px solid white;
+}
+
+.card-default {
+    background-color: yellow;
 }
 
 .card-description {
@@ -32,10 +40,11 @@
 
 .card-priority {
     background-color: red;
+    
 }
 
-.card-urgent {
-    background-color: orange;
+.card-important {
+    background-color: orange; 
 }
 
 .card-can-wait {
@@ -67,16 +76,16 @@ li {
 }
 .column2 {
     position: absolute;
-    left: 0;
+    left: 25%;
     top: 80px;
 }
 .column3 {
     position: absolute;
-    left: 0;
+    left: 50%;
     top: 80px;
 }
 .column4 {
     position: absolute;
-    left: 0;
+    left: 75%;
     top: 80px;
 }
